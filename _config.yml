@@ -3,6 +3,8 @@ title: Event Website Template
 collections:
   events:
     output: true
+  link:
+    sort_by: title
 
 exclude:
   - LICENSE.txt

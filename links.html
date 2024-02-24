@@ -3,7 +3,12 @@ layout: default
 title: Links
 ---
 
-
 <h2>Links</h2>
 
+{% for link in site.link %}
+    <div class="link_list_item">
+        <a href="{{ link.link_url }}">{{ link.title }}</a> -
+        <span>{{ link.description }}</span>
+    </div>
+{% endfor %}
 
