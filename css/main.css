@@ -1,0 +1,39 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+header {
+    padding: 10px;
+    background: #ddd;
+}
+header h1 {
+    font-family: arial, sans-serif;
+}
+header nav ul {
+    padding: 10px 0;
+}
+header nav ul li {
+    display: inline-block;
+    font-family: arial, sans-serif;
+}
+#body  {
+    padding: 10px;
+}
+#body h2, #body h3, #body h4  {
+    font-family: arial, sans-serif;
+}
+footer{
+    padding: 50px 10px 10px 10px;
+    text-align: center;
+    font-size: 80%;
+}
+.content {
+    max-width: 960px;
+    margin: 0 auto;
+}
+.content_summary {
+    margin: 10px 0;
+    padding: 10px 5px;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+}
