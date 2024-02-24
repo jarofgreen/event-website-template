@@ -49,3 +49,9 @@ footer{
 ul.blog_meta_details {
     list-style-type: none;
 }
+.event_list_item {
+    padding: 5px 0;
+}
+ul.event_meta_details {
+    list-style-type: none;
+}

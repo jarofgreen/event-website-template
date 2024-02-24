@@ -1,0 +1,12 @@
+---
+layout: default
+---
+
+<h2>{{ page.title }}</h2>
+
+<ul class="event_meta_details">
+    <li>{{ page.start | date: "%l:%M%p %a %e %b %Y" }} - {{ page.end | date: "%l:%M%p %a %e %b %Y" }}</li>
+    <li>{{ page.location }}</li>
+</ul>
+
+{{ content }}

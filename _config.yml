@@ -1,8 +1,9 @@
 title: Event Website Template
 
 collections:
-  events:
+  event:
     output: true
+    sort_by: start
   link:
     sort_by: title
 

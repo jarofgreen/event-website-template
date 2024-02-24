@@ -6,11 +6,12 @@ title: Events
 
 <h2>Events</h2>
 
-{% for event in site.events %}
+{% assign event_list = site.event|reverse %}
+{% for event in event_list %}
     <div>
         <h4>
             <a href="{{ event.url }}">
-                {{ event.start }} - {{ event.title }}
+                {{ event.start | date: "%l:%M%p %a %e %b %Y"  }}: {{ event.title }}
             </a>
         </h4>
     </div>

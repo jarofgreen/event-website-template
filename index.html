@@ -8,13 +8,24 @@ title: home
 
 <div class="content_summary">
     <h3>Upcoming Events</h3>
-    {% for event in site.events %}
-        <div>
-            <h4><a href="{{ event.url }}">
-                {{ event.start }} - {{ event.title }}
-            </a></h4>
-        </div>
+    {% assign now = "now"|date:"%s" %}
+    {% assign no_upcoming_events_found = true %}
+    {% for event in site.event %}
+        {% assign start = event.start| date: "%s" %}
+        {% if start > now %}
+            {% assign no_upcoming_events_found = false %}
+            <div class="event_list_item">
+                <h4>
+                    <a href="{{ event.url }}">
+                        {{ event.start | date: "%l:%M%p %a %e %b %Y" }}: {{ event.title }}
+                    </a>
+                </h4>
+            </div>
+        {% endif %}
   {% endfor %}
+  {% if no_upcoming_events_found %}
+    <p>No upcoming events</p>
+  {% endif %}
 </div>
 
 <div class="content_summary">
