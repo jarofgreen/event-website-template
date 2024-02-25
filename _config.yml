@@ -1,4 +1,6 @@
 title: Event Website Template
+url: https://jarofgreen.github.io
+baseurl: /event-website-template
 
 collections:
   event:
