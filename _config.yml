@@ -12,3 +12,6 @@ collections:
 exclude:
   - LICENSE.txt
   - README.md
+  - datatig.yaml
+keep_files:
+  - datatig

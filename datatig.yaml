@@ -1,0 +1,60 @@
+title: Event Website template
+githost:
+    url: jarofgreen/event-website-template
+    primary_branch: main
+types:
+- id: event
+  directory: _event
+  list_fields:
+  - title
+  - start
+  default_format: md
+  markdown_body_is_field: content
+  fields:
+    - id: title
+      key: title
+      title: Title
+    - id: content
+      key: content
+      title: Content
+    - id: location
+      key: location
+      title: Location
+    - id: start
+      key: start
+      title: Start
+      type: datetime
+    - id: end
+      key: end
+      title: End
+      type: datetime
+- id: link
+  directory: _link
+  list_fields:
+  - title
+  - link_url
+  default_format: md
+  fields:
+    - id: title
+      key: title
+      title: Title
+    - id: link_url
+      key: link_url
+      title: Link URL
+      type: URL
+    - id: description
+      key: description
+      title: Description
+- id: blog
+  directory: _posts
+  list_fields:
+  - title
+  default_format: md
+  markdown_body_is_field: content
+  fields:
+    - id: title
+      key: title
+      title: Title
+    - id: content
+      key: content
+      title: Content
