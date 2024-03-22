@@ -1,5 +1,7 @@
+# TOUSE: Replace with the title of your group
 title: Event Website template
 githost:
+    # TOUSE: Replace url with the GitHub repository. If not using GitHub, delete the githost block.
     url: jarofgreen/event-website-template
     primary_branch: main
 types:

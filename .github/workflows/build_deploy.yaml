@@ -20,6 +20,7 @@ jobs:
     - name: Install DataTig
       run: "pip install datatig"
     - name: Build DataTig site
+      # TOUSE: Replace the URL with the URL of your site, but leave /datatig at the end
       run: "python -m datatig.cli build . --staticsiteoutput _site/datatig --staticsiteurl https://jarofgreen.github.io/event-website-template/datatig"
     - name: Build Jekyll site
       run: "docker run --rm --volume=\"${{ github.workspace }}:/srv/jekyll:Z\" jekyll/builder:4 /bin/bash -c 'chmod 777 /srv/jekyll && jekyll build _site'"

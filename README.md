@@ -30,6 +30,11 @@ The website is a static website that can be entirely built and hosted on GitHub 
 
 Simply fork this repository, edit as needed and go!
 
+Start by searching for "TOUSE" in the source code, and change all of these as directed.
+
+To host on GitHub go to settings, pages and for the “source” option select “Github Actions”.
+If you want to host elsewhere you'll need to adopt the build script in .github/workflows/build_deploy.yaml to your host.
+
 ## Develop locally
 
 To build the Jekyll site:
@@ -51,7 +56,4 @@ python -m datatig.cli build . --staticsiteoutput _site/datatig
 Future DataTig versions will allow better event editing, 
 and allow creation of public ical feeds for people to import straight into calendars.
 
-## To host on GitHub
-
-Go to settings, pages and for the “source” option select “Github Actions”.
 

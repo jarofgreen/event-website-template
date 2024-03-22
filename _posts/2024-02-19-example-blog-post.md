@@ -3,5 +3,8 @@ layout: blog
 title:  "Example Blog Post!"
 ---
 
-This is a example blog post
+This is an example blog post
+
+TOUSE Change this to a blog post introducing your new site (or something else)
+
 
