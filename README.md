@@ -18,6 +18,8 @@ Links section.
 
 Basic design to customise.
 
+[Schema.org](https://schema.org/) markup for SEO and data reuse.
+
 ## Technical information
 
 The website is a static website that can be entirely built and hosted on GitHub or other good hosting services with pages and build capabilities.

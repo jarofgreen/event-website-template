@@ -8,9 +8,9 @@ title: Events
 
 {% assign event_list = site.event|reverse %}
 {% for event in event_list %}
-    <div>
+    <div itemscope itemtype="https://schema.org/Event">
         <h4>
-            <a href="{{ event.url  | relative_url }}">
+            <a href="{{ event.url  | relative_url }}" itemprop="url">
                 {{ event.start | date: "%l:%M%p %a %e %b %Y"  }}: {{ event.title }}
             </a>
         </h4>

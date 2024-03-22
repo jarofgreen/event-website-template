@@ -2,11 +2,22 @@
 layout: default
 ---
 
-<h2>{{ page.title }}</h2>
+<div itemscope itemtype="https://schema.org/Event">
+    <meta itemprop="url" content="{{ page.url  | absolute_url }}">
 
-<ul class="event_meta_details">
-    <li>{{ page.start | date: "%l:%M%p %a %e %b %Y" }} - {{ page.end | date: "%l:%M%p %a %e %b %Y" }}</li>
-    <li>{{ page.location }}</li>
-</ul>
+    <h2 itemprop="name">{{ page.title }}</h2>
 
-{{ content }}
+    <ul class="event_meta_details">
+        <li>
+            <span itemprop="startDate">{{ page.start | date: "%l:%M%p %a %e %b %Y" }}</span>
+            -
+            <span itemprop="endDate">{{ page.end | date: "%l:%M%p %a %e %b %Y" }}</span>
+        </li>
+        <li itemprop="location">{{ page.location }}</li>
+    </ul>
+
+    <div itemprop="description">
+        {{ content }}
+    </div>
+
+</div>

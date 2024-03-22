@@ -7,9 +7,9 @@ title: Blogs
 <h2>Blogs</h2>
 
 {% for post in site.posts %}
-    <div class="blog_list_item">
-        <h3><a href="{{ post.url  | relative_url }}">{{ post.title }}</a></h3>
-        <div>{{ post.date | date: "%-d %B %Y" }}</div>
+    <div class="blog_list_item" itemscope itemtype="https://schema.org/BlogPosting">
+        <h3 itemprop="name"><a href="{{ post.url  | relative_url }}" itemprop="url">{{ post.title }}</a></h3>
+        <div itemprop="dateCreated">{{ post.date | date: "%-d %B %Y" }}</div>
     </div>
 {% endfor %}
 
