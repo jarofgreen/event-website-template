@@ -8,7 +8,7 @@ This repository is a template for such a website.
 
 ## Features
 
-A blog section.
+A blog section, with RSS feed.
 
 An events listing section.
 
