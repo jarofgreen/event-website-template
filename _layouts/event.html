@@ -7,17 +7,37 @@ layout: default
 
     <h2 itemprop="name">{{ page.title }}</h2>
 
-    <ul class="event_meta_details">
+    <ul class="page_meta_details">
         <li>
             <span itemprop="startDate">{{ page.start | date: "%l:%M%p %a %e %b %Y" }}</span>
             -
             <span itemprop="endDate">{{ page.end | date: "%l:%M%p %a %e %b %Y" }}</span>
         </li>
-        <li itemprop="location">{{ page.location }}</li>
+        {% if page.location %}
+            <li itemprop="location">{{ page.location }}</li>
+        {% endif %}
     </ul>
 
     <div itemprop="description">
         {{ content }}
     </div>
 
+</div>
+
+
+<div class="end-page-navigation">
+  <div>
+    {% if page.previous.url %}
+      <a href="{{ page.previous.url | relative_url }}">
+        Previous: {{ page.previous.title }}
+      </a>
+    {% endif %}
+  </div>
+  <div class="post-nav-next">
+    {% if page.next.url %}
+      <a href="{{ page.next.url | relative_url }}">
+        Next: {{ page.next.title }}
+      </a>
+    {% endif %}
+  </div>
 </div>

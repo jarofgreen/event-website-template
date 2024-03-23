@@ -6,41 +6,11 @@ title: Welcome
 
 <p>TOUSE: Place some welcome text here</p>
 
-<div class="content_summary">
-    <h3>Upcoming Events</h3>
-    {% assign now = "now"|date:"%s" %}
-    {% assign no_upcoming_events_found = true %}
-    {% for event in site.event %}
-        {% assign start = event.start| date: "%s" %}
-        {% if start > now %}
-            {% assign no_upcoming_events_found = false %}
-            <div class="event_list_item" itemscope itemtype="https://schema.org/Event">
-                <h4>
-                    <a href="{{ event.url | relative_url }}" itemprop="url">
-                        {{ event.start | date: "%l:%M%p %a %e %b %Y" }}: {{ event.title }}
-                    </a>
-                </h4>
-            </div>
-        {% endif %}
-  {% endfor %}
-  {% if no_upcoming_events_found %}
-    <p>No upcoming events</p>
-  {% endif %}
-</div>
-
-<div class="content_summary">
-    <h3>Recent Posts</h3>
-    {% assign recent_posts = site.posts|slice:0,3 %}
-    {% for post in recent_posts %}
-        <div class="blog_list_item" itemscope itemtype="https://schema.org/BlogPosting">
-            <h4 itemprop="name"><a href="{{ post.url | relative_url }}" itemprop="url">{{ post.title }}</a></h4>
-            <div itemprop="dateCreated">{{ post.date | date: "%-d %B %Y" }}</div>
-        </div>
-    {% endfor %}
-    {% assign posts_length = site.posts|size %}
-    {% if posts_length > 3 %}
-        <div class="content_summary_more">
-            <a href="{{ site.baseurl }}/blogs.html">More blogs</a>
-        </div>
-    {% endif %}
+<div class="end-page-navigation">
+    <div>
+        {% include upcoming_events.html %}
+    </div>
+    <div>
+        {% include recent_blog_posts.html %}
+    </div>
 </div>

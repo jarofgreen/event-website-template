@@ -14,5 +14,8 @@ title: Events
                 {{ event.start | date: "%l:%M%p %a %e %b %Y"  }}: {{ event.title }}
             </a>
         </h4>
+        <div>
+            {{ event.content | strip_html | truncatewords: 50 }}
+        </div>
     </div>
 {% endfor %}

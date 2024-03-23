@@ -1,29 +1,21 @@
----
-layout: default
-title: Blogs
----
-
-
-<h2>Blogs</h2>
-
-{% for post in site.posts %}
+<h3>Recent Posts</h3>
+{% assign recent_posts = site.posts|slice:0,3 %}
+{% for post in recent_posts %}
     <div class="blog_list_item" itemscope itemtype="https://schema.org/BlogPosting">
-        <h3>
+        <h4>
             <a href="{{ post.url | relative_url }}" itemprop="url">
                 <span itemprop="dateCreated">{{ post.date | date: "%a %e %B %Y" }}</span>:
                 <span itemprop="name">{{ post.title }}</span>
             </a>
-        </h3>
+        </h4>
         <div>
-            {{ post.content | strip_html | truncatewords: 100 }}
+            {{ post.content | strip_html | truncatewords: 50 }}
         </div>
     </div>
 {% endfor %}
-
-
-<div class="end-page-navigation">
+{% assign posts_length = site.posts|size %}
+{% if posts_length > 3 %}
     <div>
-        <a href="{{ site.baseurl }}/blogs.xml">RSS feed</a>
+        <a href="{{ site.baseurl }}/blogs.html">More blogs</a>
     </div>
-</div>
-
+{% endif %}

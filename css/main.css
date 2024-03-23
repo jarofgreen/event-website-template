@@ -31,14 +31,20 @@ footer{
     max-width: 960px;
     margin: 0 auto;
 }
-.content_summary {
-    margin: 10px 0;
+.end-page-navigation {
+    margin: 40px 0 10px 0;
+}
+@media screen and (min-width: 60rem) {
+    .end-page-navigation {
+        display: grid;
+        grid-auto-flow: column;
+        grid-gap: 10px;
+    }
+}
+.end-page-navigation > div {
     padding: 10px 5px;
     border: solid 1px #ccc;
     border-radius: 5px;
-}
-.content_summary_more {
-    text-align: right;
 }
 .link_list_item {
     padding: 5px 0;
@@ -46,12 +52,16 @@ footer{
 .blog_list_item {
     padding: 5px 0;
 }
-ul.blog_meta_details {
+ul.page_meta_details {
     list-style-type: none;
+    margin: 10px 0;
+    padding: 0;
+}
+ul.page_meta_details li {
+    margin: 5px 20px;
+    padding: 0px;
+    font-style: italic;
 }
 .event_list_item {
     padding: 5px 0;
-}
-ul.event_meta_details {
-    list-style-type: none;
 }
