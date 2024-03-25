@@ -1,9 +1,15 @@
 name: Build and Deploy
-on: [push, pull_request]
+on:
+  # Run on any change
+  push:
+  # Run on any PR, for error checking
+  pull_request:
+  # Run regularly, so upcoming event sections get updated
+  schedule:
+    - cron:  '0 12 * * *'
 
 jobs:
   build_deploy:
-    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     permissions:
       pages: write
@@ -28,6 +34,8 @@ jobs:
       uses: actions/upload-pages-artifact@v3
       with:
         path: "./_site"
+      if: github.ref == 'refs/heads/main'
     - name: Deploy to GitHub Pages
       id: deployment
       uses: actions/deploy-pages@v4
+      if: github.ref == 'refs/heads/main'
