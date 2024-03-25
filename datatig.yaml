@@ -16,6 +16,9 @@ types:
     - id: title
       key: title
       title: Title
+    - id: description
+      key: description
+      title: Description
     - id: content
       key: content
       title: Content
@@ -57,6 +60,9 @@ types:
     - id: title
       key: title
       title: Title
+    - id: description
+      key: description
+      title: Description
     - id: content
       key: content
       title: Content
