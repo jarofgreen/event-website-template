@@ -1,22 +1,30 @@
 <h3>Upcoming Events</h3>
 {% assign now = "now"|date:"%s" %}
-{% assign no_upcoming_events_found = true %}
+{% assign upcoming_events_found = 0 %}
+{% assign events_to_show = 4 %}
 {% for event in site.event %}
     {% assign start = event.start| date: "%s" %}
     {% if start > now %}
-        {% assign no_upcoming_events_found = false %}
-        <div class="event_list_item" itemscope itemtype="https://schema.org/Event">
-            <h4>
-                <a href="{{ event.url | relative_url }}" itemprop="url">
-                    {{ event.start | date: "%l:%M%p %a %e %b %Y" }}: {{ event.title }}
-                </a>
-            </h4>
-            <div>
-                {{ event.content | strip_html | truncatewords: 50 }}
+        {% assign upcoming_events_found = upcoming_events_found  | plus: 1 %}
+        {% if upcoming_events_found <= events_to_show %}
+            <div class="event_list_item" itemscope itemtype="https://schema.org/Event">
+                <h4>
+                    <a href="{{ event.url | relative_url }}" itemprop="url">
+                        {{ event.start | date: "%l:%M%p %a %e %b %Y" }}: {{ event.title }}
+                    </a>
+                </h4>
+                <div>
+                    {{ event.content | strip_html | truncatewords: 50 }}
+                </div>
             </div>
-        </div>
+        {% endif %}
     {% endif %}
 {% endfor %}
-{% if no_upcoming_events_found %}
+{% if upcoming_events_found > events_to_show %}
+    <div>
+        <a href="{{ site.baseurl }}/events.html">More events</a>
+    </div>
+{% endif %}
+{% if upcoming_events_found == 0 %}
     <p>No upcoming events</p>
 {% endif %}
