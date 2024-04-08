@@ -12,7 +12,7 @@ A blog section, with RSS feed.
 
 An events listing section.
 
-Static pages; starts with pages about the group and contact information.
+Static pages; starts with pages about the group, code of conduct, health policy and contact information.
 
 Links section.
 
