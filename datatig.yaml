@@ -29,10 +29,13 @@ types:
       key: start
       title: Start
       type: datetime
+      # TOUSE: Change this timezone (and all the others in this file) to the timezone of the event.
+      timezone: Europe/London
     - id: end
       key: end
       title: End
       type: datetime
+      timezone: Europe/London
 - id: link
   directory: _link
   list_fields:
@@ -68,6 +71,7 @@ types:
       title: Content
 calendars:
   main:
+    timezone: Europe/London
     datas:
       - type: event
         summary: title
